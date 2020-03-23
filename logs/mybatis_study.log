@@ -1,0 +1,5 @@
+[mybatis_study][INFO] [2020-03-20 11:20:15] Log4jTest.main(10) | 这是info级别的错误
+[mybatis_study][ERROR] [2020-03-20 11:20:15] Log4jTest.main(14) | 这是error级别的错误
+[mybatis_study][INFO] [2020-03-20 11:24:28] Log4jTest.main(12) | 这是info级别的错误
+[mybatis_study][WARN] [2020-03-20 11:24:28] Log4jTest.main(14) | 这是warning级别的错误
+[mybatis_study][ERROR] [2020-03-20 11:24:28] Log4jTest.main(16) | 这是error级别的错误
