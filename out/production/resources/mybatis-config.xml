@@ -5,6 +5,10 @@
 <configuration>
     <properties resource="mysql.properties"></properties>
 
+
+    <typeAliases>
+        <typeAlias alias="Person" type="com.model.Person"></typeAlias>
+    </typeAliases>
     <!-- 配置mybatis连接的数据库信息 -->
     <environments default="development">
         <environment id="development">
@@ -30,6 +34,7 @@
         <mapper resource="mapper/Person.xml"/>
         <!-- 映射文件方式2，自动扫描包内的Mapper接口与配置文件 -->
         <!--<package name="com.mybatis.demo"/>-->
+        <mapper class="com.dao.PersonMapper"></mapper>
     </mappers>
 
 </configuration>

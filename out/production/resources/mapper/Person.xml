@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com">
-    <insert id="insertPerson" parameterType="com.model.Person" >
-   INSERT INTO PERSON(ID,USERNAME,AGE,MOBILEPHONE)VALUES (#{id},#{userName},#{age},#{mobilePhone})
+    <insert id="insertPerson" parameterType="Person" statementType="PREPARED" keyProperty="id" useGeneratedKeys="true" >
+   INSERT INTO PERSON(USERNAME,AGE,MOBILEPHONE)VALUES (#{userName},#{age},#{mobilePhone})
     </insert>
 
-    <select id="queryById" parameterType="int" resultType="com.model.Person">
+    <select id="queryById" parameterType="int" resultType="Person">
         SELECT * FROM PERSON WHERE ID=#{id}
     </select>
 
-    <update id="updatePerson">
+    <update id="updatePerson" parameterType="Person">
         UPDATE PERSON SET USERNAME=#{userName},AGE=#{age},MOBILEPHONE=#{mobilePhone} WHERE ID=#{id}
     </update>
+    
+    <select id="selectPerson1" resultType="Person" parameterType="hashmap">
+        select * from person where username = #{username} and age = #{age} and mobilephone= #{mobilephone}
+    </select>
+
+    <select id="selectPerson2" resultType="Person" parameterType="Person">
+        select * from person where userName = #{userName} and age = #{age} and mobilePhone= #{mobilePhone}
+    </select>
+
+    <select id="selectPerson3" resultType="Person">
+        select * from person
+    </select>
 </mapper>
