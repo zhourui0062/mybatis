@@ -34,7 +34,7 @@
 
 
     <select id="selectPerson" resultMap="PersonMap">
-        select name from Person
+        select username from person
     </select>
 
 
