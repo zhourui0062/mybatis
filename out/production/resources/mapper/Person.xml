@@ -24,4 +24,26 @@
     <select id="selectPerson3" resultType="Person">
         select * from person
     </select>
+
+    <resultMap id="PersonMap" type="Person">
+        <id property="id" column="id"></id>
+        <result property="userName" column="userName"></result>
+        <result property="age" column="age"></result>
+        <result property="mobilePhone" column="mobilePhone"></result>
+    </resultMap>
+
+
+    <select id="selectPerson" resultMap="PersonMap">
+        select name from Person
+    </select>
+
+
+
+
+
+
+
+
+
+
 </mapper>

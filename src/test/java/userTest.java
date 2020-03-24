@@ -144,4 +144,21 @@ public class userTest {
             MybatisUtil.closeSession(sqlSession);
         }
     }
+
+
+
+    @Test
+    public void selectPerson(){
+        sqlSession = MybatisUtil.getSqlSession();
+        try{
+            List<Person> persons= sqlSession.selectList("selectPerson");
+            sqlSession.commit();
+            for(Person person : persons)
+                System.out.println(person.getUserName());
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            MybatisUtil.closeSession(sqlSession);
+        }
+    }
 }
